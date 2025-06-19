@@ -1,3 +1,8 @@
 import { createApp } from "./app";
+import { PORT } from "./config/env";
 
-createApp();
+const app = createApp();
+
+app.listen(PORT, () => {
+    console.log(`Server running in ${PORT}`);
+});
