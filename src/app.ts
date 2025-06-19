@@ -5,10 +5,8 @@ export const createApp = () => {
     const port = 3000;
 
     app.get('/', (req, res) => {
-        res.send('Hello World!')
+        res.send('Server up!')
     });
 
-    app.listen(port, () => {
-        console.log(`Server running in ${port}`);
-    });
+    return app;
 }
