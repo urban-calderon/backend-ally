@@ -39,3 +39,15 @@ export const registerUser = async(userData: UserInput) => {
         createdAt: createUser.createdAt,
     }
 }
+
+export const findUserById = async (userId: number) => {
+    const user = await prisma.user.findUnique({
+        where: { id: userId },
+    });
+    
+    if (!user) {
+        return null; 
+    }
+
+    return user;
+};
