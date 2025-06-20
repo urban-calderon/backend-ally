@@ -4,7 +4,7 @@ CREATE TABLE "users" (
     "fullName" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" VARCHAR(255) NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "createdAt" TIMESTAMP(3),
     "lastLoginAt" TIMESTAMP(3),
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
