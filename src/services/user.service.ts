@@ -12,7 +12,7 @@ export const registerUser = async(userData: UserInput) => {
     });
 
     if( existingUser ) {
-        throw CustomError.badRequest('El correo electronico ya se encuentra registrado')
+        throw CustomError.badRequest('This email is already registered');
     }
 
     // Hash password
@@ -51,3 +51,21 @@ export const findUserById = async (userId: number) => {
 
     return user;
 };
+
+export const getAllUsers = async () => {
+    const users = await prisma.user.findMany({
+        select: {
+            id: true,
+            fullName: true,
+            email: true,
+            createdAt: true,
+            lastLoginAt: true
+        }
+    });
+
+    if(!users) {
+        return null;
+    }
+
+    return users;
+}
