@@ -36,6 +36,7 @@ model Country {
   id     Int      @id @default(autoincrement())
   code   String   @db.Char(2)
   name   String
+  city   String?
 
   @@map("countries")
 }

@@ -24,6 +24,7 @@ CREATE TABLE "countries" (
     "id" SERIAL NOT NULL,
     "code" CHAR(2) NOT NULL,
     "name" TEXT NOT NULL,
+    "city" TEXT,
 
     CONSTRAINT "countries_pkey" PRIMARY KEY ("id")
 );
